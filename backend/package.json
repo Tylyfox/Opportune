@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "https://github.com/Tylyfox/Opportune",
+  "author": "Valentin Cadart",
+  "license": "ISC",
+  "scripts": {
+    "start": "ts-node-dev --watch .src .src/indext.ts",
+    "build": "tsc",
+    "prod": "node ./dist/index.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.2",
+    "apollo-server-express": "^3.13.0",
+    "argon2": "^0.41.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cookies": "^0.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "graphql": "^16.9.0",
+    "graphql-scalars": "^1.23.0",
+    "graphql-tools": "^9.0.3",
+    "graphql-type-json": "^0.3.2",
+    "jose": "^5.9.6",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@graphql-tools/mock": "^9.0.6",
+    "@graphql-tools/schema": "^10.0.8",
+    "@graphql-tools/utils": "^10.5.6",
+    "@types/cookies": "^0.9.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}
