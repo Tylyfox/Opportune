@@ -6,7 +6,7 @@
   "author": "Valentin Cadart",
   "license": "ISC",
   "scripts": {
-    "start": "ts-node-dev --watch .src .src/indext.ts",
+    "start": "ts-node-dev --watch ./src ./src/index.ts",
     "build": "tsc",
     "prod": "node ./dist/index.js"
   },
@@ -37,6 +37,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
     "ts-node-dev": "^2.0.0",
+    "type-graphql": "^2.0.0-rc.2",
     "typescript": "^5.6.3"
   }
 }

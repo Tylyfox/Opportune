@@ -14,5 +14,5 @@
     "noUnusedLocals": false,                             /* Report errors on unused local variables. */
     "noUnusedParameters": false                          /* Report errors on unused parameters. */
   },
-  "include": ["src/**/*.ts", "__tests__/*.ts", "src/initialScript.ts"]
+  "include": ["src/**/*.ts", "__tests__/*.ts"]
 }

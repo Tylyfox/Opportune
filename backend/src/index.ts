@@ -49,7 +49,7 @@ async function main() {
         }),
         express.json(),
         expressMiddleware(server, {
-            context: async ({ req, res }) => {
+            context: async ({ req, res }: { req: any, res: any}) => {
                 // Handle preflight requests and health checks
                 if (req.method === "OPTIONS" || req.url === "/.well-known/apollo/server-health") {
                     return { req, res, user: null };
