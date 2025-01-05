@@ -5,24 +5,29 @@ import { JwtService } from "./jwt.service";
 
 @Injectable()
 export class AuthService {
-    constructor(
-      private readonly userService: UserService,
-      private readonly jwtService: JwtService,
-    ) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly jwtService: JwtService,
+  ) { }
 
-    async signUp(createUserDto: CreateUserDto) {
-        return this.userService.create(createUserDto);
+  async signUp(createUserDto: CreateUserDto) {
+    const user = await this.userService.create(createUserDto);
+
+    const payload = { sub: user.id, email: user.email };
+    const accessToken = this.jwtService.sign(payload);
+
+    return { accessToken };
+  }
+
+  async signIn(email: string, password: string) {
+    const user = await this.userService.validateUser(email, password);
+    if (!user) {
+      throw new UnauthorizedException('Invalid credentials');
     }
 
-    async signIn(email: string, password: string) {
-      const user = await this.userService.validateUser(email, password);
-      if (!user) {
-        throw new UnauthorizedException('Invalid credentials');
-      }
+    const payload = { sub: user.id, email: user.email };
+    const accessToken = this.jwtService.sign(payload);
 
-      const payload = { sub: user.id, email: user.email};
-      const accessToken = this.jwtService.sign(payload);
-
-      return {accessToken};
-    }
+    return { accessToken };
+  }
 }

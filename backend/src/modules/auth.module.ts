@@ -4,6 +4,7 @@ import { UserModule } from './user.module';
 import { AuthController } from '../controllers/auth.controller';
 import { AuthService } from '../services/auth.service';
 import { JwtService } from '../services/jwt.service'; // Ton service Jwt
+import { JwtStrategy } from 'src/services/jwt.strategy';
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import { JwtService } from '../services/jwt.service'; // Ton service Jwt
     UserModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtService], // Assure-toi d'ajouter JwtService ici
+  providers: [AuthService, JwtService, JwtStrategy], // Assure-toi d'ajouter JwtService ici
 })
 export class AuthModule {}
