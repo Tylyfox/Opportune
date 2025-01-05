@@ -9,7 +9,7 @@ export class UserController {
         private readonly userService: UserService
     ) {}
     
-    @Post('register')
+    @Post('signup')
     async register(@Body() createUserDto: CreateUserDto) {
         return this.userService.create(createUserDto);
     }
